@@ -20,11 +20,13 @@
 
 /// 2D vector
 /// This can be used to represent a point or free vector
-typedef struct b2Vec2
-{
-	/// coordinates
-	float x, y;
-} b2Vec2;
+//typedef struct b2Vec2
+//{
+//  /// coordinates
+//  float x, y;
+//} b2Vec2;
+#include "../../../raylib/src/raylib.h"
+typedef Vector2 b2Vec2;
 
 /// Cosine and sine pair
 /// This uses a custom implementation designed for cross platform determinism
