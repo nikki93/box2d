@@ -26,7 +26,10 @@
 //  float x, y;
 //} b2Vec2;
 #include "../../../raylib/src/raylib.h"
-typedef Vector2 b2Vec2;
+#ifndef BOX2D_VEC2
+#define BOX2D_VEC2 Vector2
+#endif
+typedef BOX2D_VEC2 b2Vec2;
 
 /// Cosine and sine pair
 /// This uses a custom implementation designed for cross platform determinism
@@ -629,6 +632,7 @@ B2_API float b2GetLengthUnitsPerMeter( void );
  */
 
 #ifdef __cplusplus
+#ifndef BOX2D_NO_MATH_OPERATORS
 
 /// Unary add one vector to another
 inline void operator+=( b2Vec2& a, b2Vec2 b )
@@ -693,6 +697,7 @@ inline bool operator!=( b2Vec2 a, b2Vec2 b )
 	return a.x != b.x || a.y != b.y;
 }
 
+#endif
 #endif
 
 /**@}*/
